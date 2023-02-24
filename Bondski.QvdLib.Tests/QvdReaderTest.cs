@@ -6,14 +6,15 @@
 
     public class QvdReaderTest
     {
-        private static string TestFilePath => new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName + "/Resources/HeaderReaderTest/Test.qvd";
+        private static string TestFilePath => new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName + "/Resources/HeaderReaderTest/coupons.qvd";
 
         [Fact]
         public void ReadHeader()
         {
             QvdReader reader = new QvdReader(TestFilePath);
             Assert.NotNull(reader.Header);
-            Assert.Equal("Test", reader.Header.TableName);
+            Assert.Equal("coupons", reader.Header.TableName);
+            
         }
     }
 }

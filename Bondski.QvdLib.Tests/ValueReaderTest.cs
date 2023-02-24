@@ -7,7 +7,7 @@ namespace Bondski.QvdLib.Tests
 {
     public class ValueReaderTest
     {
-        private static string TestFilePath => new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName + "/Resources/HeaderReaderTest/Test.qvd";
+        private static string TestFilePath => new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName + "/Resources/HeaderReaderTest/coupons.qvd";
         private QvdReader reader;
 
         public ValueReaderTest()
@@ -52,8 +52,8 @@ namespace Bondski.QvdLib.Tests
         [Fact]
         public void ReadDualDoubleTest()
         {
-            Value val = reader["DualDoubleColumn"];
-            Assert.Equal(ValueType.DualDouble, val.Type);
+            Value val = reader["zzz_pool_factor"];
+            Assert.Equal(ValueType.Double, val.Type);
             Assert.Equal("A", val.String);
             Assert.Equal(1.1, val.Double);
             Assert.Equal(0, val.Int);
